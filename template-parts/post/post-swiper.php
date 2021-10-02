@@ -15,7 +15,7 @@
 								</h1>
 								<div class="post-swiper-datapost">
 									<span><a href="#">Admin</a></span>
-									<span class="separator">•</span>
+									<span class="separator">/</span>
 									<span>30 September 2021</span>
 								</div>
 							</section>
@@ -39,7 +39,7 @@
 								</h1>
 								<div class="post-swiper-datapost">
 									<span><a href="#">Admin</a></span>
-									<span class="separator">•</span>
+									<span class="separator">/</span>
 									<span>30 September 2021</span>
 								</div>
 							</section>
@@ -63,7 +63,7 @@
 								</h1>
 								<div class="post-swiper-datapost">
 									<span><a href="#">Admin</a></span>
-									<span class="separator">•</span>
+									<span class="separator">/</span>
 									<span>30 September 2021</span>
 								</div>
 							</section>

@@ -700,10 +700,18 @@ a {
 	margin-bottom: 30px;
 }
 
+.footer .widget {
+	font-size: 15px;
+}
+
 .widget-title {
 	display: block;
 	font-size: 22px;
 	margin: 0 0 15px 0;
+}
+
+.footer .widget-title {
+	font-size: 18px;
 }
 
 .widget ul {
@@ -801,4 +809,116 @@ a {
 	color: var(--tint4);
 	border: 1px solid var(--tint8);
 	border-radius: 5px;
+}
+
+/* widget pages */
+
+.widget_pages ul {
+	overflow: hidden;
+}
+
+.widget_pages ul li {
+	width: 50%;
+	float: left;
+}
+
+.widget_pages ul li a {
+	display: inline-block;
+	padding: 8px 0;
+	color: var(--tint5);
+	font-weight: 600;
+	transition: .2s;
+	-webkit-transition: .2s;
+	-moz-transition: .2s;
+	-o-transition: .2s;
+}
+
+.widget_pages ul li a:hover {
+	color: var(--black);
+}
+
+/* widget nav menu */
+
+.widget_nav_menu ul {
+	overflow: hidden;
+}
+
+.widget_nav_menu ul li {
+	width: 50%;
+	float: left;
+}
+
+.widget_nav_menu ul li a {
+	display: inline-block;
+	padding: 8px 0;
+	color: var(--tint5);
+	font-weight: 600;
+	transition: .2s;
+	-webkit-transition: .2s;
+	-moz-transition: .2s;
+	-o-transition: .2s;
+}
+
+.widget_nav_menu ul li a:hover {
+	color: var(--black);
+}
+
+/* widget meta */
+
+.widget_meta ul {
+	overflow: hidden;
+}
+
+.widget_meta ul li {
+	width: 50%;
+	float: left;
+}
+
+.widget_meta ul li a {
+	display: inline-block;
+	padding: 8px 0;
+	color: var(--tint5);
+	font-weight: 600;
+	transition: .2s;
+	-webkit-transition: .2s;
+	-moz-transition: .2s;
+	-o-transition: .2s;
+}
+
+.widget_meta ul li a:hover {
+	color: var(--black);
+}
+
+/* widget recent entries */
+
+.widget_recent_entries ul li {
+	margin-bottom: 20px;
+}
+
+.widget_recent_entries ul li a {
+	display: inline-block;
+	color: var(--black);
+	font-weight: 600;
+	line-height: 1.4;
+	margin-bottom: 4px;
+}
+
+.widget_recent_entries ul li span {
+	display: block;
+	font-size: 15px;
+	color: var(--tint7);
+}
+
+/* widget tag cloud */
+
+.widget_tag_cloud a {
+	color: var(--blue1);
+}
+
+/* widget text */ 
+
+.widget_text p {
+	font-size: 15px;
+	color: var(--tint1);
+	line-height: 1.5;
 }

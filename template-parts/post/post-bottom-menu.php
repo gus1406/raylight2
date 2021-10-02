@@ -5,7 +5,7 @@
 				<section class="post-bottom-menu-entry">
 					<h1 class="post-bottom-menu-title">
 						<a href="#">
-							Indonesian culture is still sustainable accompanied by the modern world
+							Mengenal Suku Pedalaman Indonesia yang Masih Lestari di Tengah Gerakan Modern.
 						</a>
 					</h1>
 					<span class="post-bottom-menu-date">
@@ -20,7 +20,7 @@
 				<section class="post-bottom-menu-entry">
 					<h1 class="post-bottom-menu-title">
 						<a href="#">
-							Lockdown is the best way to see Jakarta's blue sky
+							Hanya pada saat Lockdown Kita Bisa Menyaksikan Cerahnya Langit Biru.
 						</a>
 					</h1>
 					<span class="post-bottom-menu-date">
@@ -35,7 +35,7 @@
 				<section class="post-bottom-menu-entry">
 					<h1 class="post-bottom-menu-title">
 						<a href="#">
-							Tracing rogue practices, unpaid don't expect fast processing
+							Tarif Angkut Kontainer Semakin Hari Semakin Meningkat.
 						</a>
 					</h1>
 					<span class="post-bottom-menu-date">

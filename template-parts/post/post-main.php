@@ -6,14 +6,16 @@
 					</figure>
 					<section class="post-main-entry">
 						<div class="post-main-category">
-							<a href="#">Economy</a>
+							<a href="#">Industri</a>
 						</div>
 						<h1 class="post-main-title">
-							<a href="#">Tracing rogue practices, unpaid don't expect fast processing</a>
+							<a href="#">
+								Tarif Kargo Laut Naik Hingga 500%, ini Penyebabnya.
+							</a>
 						</h1>
 						<div class="post-main-datapost">
 							<span><a href="#">Admin</a></span>
-							<span class="separator">∙</span>
+							<span class="separator">/</span>
 							<span>30 September 2021</span>
 						</div>
 					</section>
@@ -33,7 +35,7 @@
 						</h1>
 						<div class="post-main-datapost">
 							<span><a href="#">Admin</a></span>
-							<span class="separator">∙</span>
+							<span class="separator">/</span>
 							<span>30 September 2021</span>
 						</div>
 					</section>
@@ -53,7 +55,7 @@
 						</h1>
 						<div class="post-main-datapost">
 							<span><a href="#">Admin</a></span>
-							<span class="separator">∙</span>
+							<span class="separator">/</span>
 							<span>30 September 2021</span>
 						</div>
 					</section>
@@ -73,7 +75,7 @@
 						</h1>
 						<div class="post-main-datapost">
 							<span><a href="#">Admin</a></span>
-							<span class="separator">∙</span>
+							<span class="separator">/</span>
 							<span>30 September 2021</span>
 						</div>
 					</section>
@@ -93,7 +95,7 @@
 						</h1>
 						<div class="post-main-datapost">
 							<span><a href="#">Admin</a></span>
-							<span class="separator">∙</span>
+							<span class="separator">/</span>
 							<span>30 September 2021</span>
 						</div>
 					</section>
