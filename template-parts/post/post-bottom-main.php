@@ -10,6 +10,9 @@
 							<h1 class="post-bottom-main-title">
 								<a href="#">Tracing rogue practices, unpaid don't expect fast processing</a>
 							</h1>
+							<div class="post-bottom-main-date">
+								5 Oktober 2021
+							</div>
 						</section>
 					</article>
 				</li>
@@ -24,6 +27,9 @@
 							<h1 class="post-bottom-main-title">
 								<a href="#">Tracing rogue practices, unpaid don't expect fast processing</a>
 							</h1>
+							<div class="post-bottom-main-date">
+								5 Oktober 2021
+							</div>
 						</section>
 					</article>
 				</li>
@@ -38,6 +44,9 @@
 							<h1 class="post-bottom-main-title">
 								<a href="#">Tracing rogue practices, unpaid don't expect fast processing</a>
 							</h1>
+							<div class="post-bottom-main-date">
+								5 Oktober 2021
+							</div>
 						</section>
 					</article>
 				</li>
@@ -52,6 +61,9 @@
 							<h1 class="post-bottom-main-title">
 								<a href="#">Tracing rogue practices, unpaid don't expect fast processing</a>
 							</h1>
+							<div class="post-bottom-main-date">
+								5 Oktober 2021
+							</div>
 						</section>
 					</article>
 				</li>
@@ -66,6 +78,9 @@
 							<h1 class="post-bottom-main-title">
 								<a href="#">Tracing rogue practices, unpaid don't expect fast processing</a>
 							</h1>
+							<div class="post-bottom-main-date">
+								5 Oktober 2021
+							</div>
 						</section>
 					</article>
 				</li>

@@ -1,4 +1,4 @@
-<footer class="footer" id="Footer">
+<footer class="footer" id="footer">
 	<div class="container">
 		
 		<div class="footer-flex">
@@ -42,10 +42,29 @@
 					</ul>
 				</aside>
 			</div><!-- .footer-column -->
+			<div class="footer-column">
+				<aside class="widget widget_pages">
+					<h3 class="widget-title">Laman</h3>
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Disclaimer</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+					</ul>
+				</aside>
+			</div><!-- .footer-column -->
 		</div><!-- .footer-flex -->
 
 	</div><!-- .container -->
 </footer><!-- .footer -->
+
+<footer class="footer-copy" id="footer_copy">
+	<p>Copyright © 2021 - <a href="#">Raylight</a> - All right reserved</p>
+</footer>
+
+<section class="go-top" id="go_top">
+	<span><i class="fas fa-arrow-up"></i></span>
+</section>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="js/js-jquery.js" type="text/javascript"></script>
