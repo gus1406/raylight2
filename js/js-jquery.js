@@ -1,6 +1,6 @@
 $(window).on("load", function(){
 
-	$("#open_nav_menu_slide").click(function(){
+	$("#open_nav_menu_slide, #navbar_mobile_open_menu_slide").click(function(){
 		$(".navbar-menu-slide").animate({ marginLeft: '0' }, 1000);
 		$(".navbar-menu-slide-container").animate({ marginLeft: '0' }, 1200);
 	});
@@ -8,6 +8,18 @@ $(window).on("load", function(){
 	$(".close-navbar-menu-slide").click(function(){
 		$(".navbar-menu-slide").animate({ marginLeft: '-100%' }, 1000);
 		$(".navbar-menu-slide-container").animate({ marginLeft: '-100%' }, 1200);
+	});
+
+	$(window).scroll(function(){
+		if ($(this).scrollTop() > 300) {
+			$("#go_top").fadeIn();
+		} else {
+			$("#go_top").fadeOut();
+		}
+	})
+
+	$("#go_top").click(function(){
+		$("html, body").animate({ scrollTop: 0 }, 1000);
 	});
 
 });

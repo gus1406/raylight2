@@ -66,6 +66,12 @@
 		</div><!-- .navbar-menu-slide-content -->
 
 		<div class="navbar-menu-slide-footer">
+			<p>
+				<a href="#"><i class="fab fa-facebook-f"></i></a>
+				<a href="#"><i class="fab fa-twitter"></i></a>
+				<a href="#"><i class="fab fa-instagram"></i></a>
+				<a href="#"><i class="fab fa-youtube"></i></a>
+			</p>
 			<p>Copyright © 2021 - <a href="#">Raylight</a> - All Right Reserved</p>
 		</div><!-- .navbar-menu-slide-footer -->
 
@@ -108,3 +114,47 @@
 
 	</div><!-- .container -->
 </nav><!-- .navbar-menu -->
+
+<!-- navbar mobile, max width 768px -->
+
+<nav class="navbar-mobile" id="navbar_mobile">
+	<div class="container">
+		
+		<div class="navbar-mobile-flex">
+
+			<div class="navbar-mobile-menu-button">
+				<span id="navbar_mobile_open_menu_slide"><i class="fas fa-bars"></i></span>
+			</div><!-- .navbar-mobile-menu-button -->
+
+			<div class="navbar-mobile-site-branding">
+				<h1><a href="#">Raylight</a></h1>
+			</div><!-- .navbar-mobile-site-branding -->
+
+			<div class="navbar-mobile-search-button">
+				<span><i class="fas fa-search"></i></span>
+			</div><!-- .navbar-mobile-search-button -->
+
+		</div><!-- .navbar-mobile-flex -->
+
+	</div><!-- .container -->
+</nav><!-- .navbar-mobile -->
+
+<nav class="navbar-mobile-menu" id="navbar_mobile_menu">
+	<div class="container">
+		
+		<div class="navbar-mobile-menu-flex">
+			<ul>
+				<li><a href="#">Beranda</a></li>
+				<li><a href="#">Dunia</a></li>
+				<li><a href="#">Ekonomi</a></li>
+				<li><a href="#">Bisnis</a></li>
+				<li><a href="#">Budaya</a></li>
+				<li><a href="#">Politik</a></li>
+				<li><a href="#">Gaya Hidup</a></li>
+				<li><a href="#">Teknologi</a></li>
+				<li><a href="#">Covid-19</a></li>
+			</ul>
+		</div>
+
+	</div>
+</nav>
