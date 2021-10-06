@@ -22,4 +22,16 @@ $(window).on("load", function(){
 		$("html, body").animate({ scrollTop: 0 }, 1000);
 	});
 
+	$(window).scroll(function(){
+		if ($(this).scrollTop() > 110) {
+			$("#navbar_mobile").addClass("scroll");
+		} else {
+			$("#navbar_mobile").removeClass("scroll");
+		}
+	});
+
+	$(".toggle-search-form-mobile").click(function(){
+		$("#search_form_mobile").slideToggle();
+	})
+
 });

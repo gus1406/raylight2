@@ -7,8 +7,8 @@
 
 	<link rel="stylesheet" href="css/normalize.css" type="text/css">
 	<link rel="stylesheet" href="css/style.css" type="text/css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" type="text/css">
 	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" type="text/css">
+	<link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
 	
 </head>
 <body>
@@ -19,11 +19,18 @@
 		<div class="navbar-top-flex">
 			<div class="navbar-top-left">
 				<ul class="remove-list">
-					<li><span id="open_nav_menu_slide"><i class="fas fa-bars"></i></span> <b>Menu</b></li>
+					<li>
+						<span id="open_nav_menu_slide">
+							<?php echo file_get_contents("image/menu-icon-1.svg"); ?>
+						</span> 
+						<b>Menu</b>
+					</li>
 					<li>
 						<form action="" class="navbar-top-left-form">
 							<input type="text" name="s" placeholder="Cari artikel">
-							<button type="submit"><i class="fas fa-search"></i></button>
+							<button type="submit">
+								<?php echo file_get_contents("image/search-icon.svg"); ?>
+							</button>
 						</form>
 					</li>
 				</ul>
@@ -31,10 +38,10 @@
 			<div class="navbar-top-right">
 				<ul class="remove-list">
 					<li><span>Kamis, 30 September 2021</span></li>
-					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-					<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+					<li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+					<li><a href="#"><i class="lni lni-twitter-filled"></i></a></li>
+					<li><a href="#"><i class="lni lni-instagram-original"></i></a></li>
+					<li><a href="#"><i class="lni lni-youtube"></i></a></li>
 				</ul>
 			</div><!-- .navbar-top-right -->
 		</div><!-- .navbar-top-flex -->
@@ -47,7 +54,7 @@
 		
 		<div class="navbar-menu-slide-header">
 			<div class="close-navbar-menu-slide">
-				<i class="fas fa-times"></i>
+				<?php echo file_get_contents("image/close-icon.svg"); ?>
 			</div><!-- .close-navbar-menu-slide -->
 		</div><!-- .navbar-menu-slide-header -->
 
@@ -67,10 +74,10 @@
 
 		<div class="navbar-menu-slide-footer">
 			<p>
-				<a href="#"><i class="fab fa-facebook-f"></i></a>
-				<a href="#"><i class="fab fa-twitter"></i></a>
-				<a href="#"><i class="fab fa-instagram"></i></a>
-				<a href="#"><i class="fab fa-youtube"></i></a>
+				<a href="#"><i class="lni lni-facebook-filled"></i></a>
+				<a href="#"><i class="lni lni-twitter-filled"></i></a>
+				<a href="#"><i class="lni lni-instagram-original"></i></a>
+				<a href="#"><i class="lni lni-youtube"></i></a>
 			</p>
 			<p>Copyright © 2021 - <a href="#">Raylight</a> - All Right Reserved</p>
 		</div><!-- .navbar-menu-slide-footer -->
@@ -83,7 +90,10 @@
 		
 		<div class="navbar-main-flex">
 			<div class="navbar-main-site-branding">
-				<h1><a href="#">Raylight</a></h1>
+				<!--<h1><a href="#">Raylight</a></h1>-->
+				<a href="#">
+					<img src="image/logo_raylight.png" alt="logo">
+				</a>
 			</div><!-- .navbar-main-site-branding -->
 			<div class="navbar-main-ads">
 				<img src="image/ads_nav.png" alt="ads">
@@ -123,15 +133,22 @@
 		<div class="navbar-mobile-flex">
 
 			<div class="navbar-mobile-menu-button">
-				<span id="navbar_mobile_open_menu_slide"><i class="fas fa-bars"></i></span>
+				<span id="navbar_mobile_open_menu_slide">
+					<?php echo file_get_contents("image/menu-icon.svg"); ?>
+				</span>
 			</div><!-- .navbar-mobile-menu-button -->
 
 			<div class="navbar-mobile-site-branding">
-				<h1><a href="#">Raylight</a></h1>
+				<!--<h1><a href="#">Raylight</a></h1>-->
+				<a href="#">
+					<img src="image/logo_raylight.png" alt="logo">
+				</a>
 			</div><!-- .navbar-mobile-site-branding -->
 
 			<div class="navbar-mobile-search-button">
-				<span><i class="fas fa-search"></i></span>
+				<span class="toggle-search-form-mobile">
+					<?php echo file_get_contents("image/search-icon.svg"); ?>
+				</span>
 			</div><!-- .navbar-mobile-search-button -->
 
 		</div><!-- .navbar-mobile-flex -->
@@ -154,7 +171,25 @@
 				<li><a href="#">Teknologi</a></li>
 				<li><a href="#">Covid-19</a></li>
 			</ul>
+		</div><!-- .navbar-mobile-menu-flex -->
+
+	</div><!-- .container -->
+</nav><!-- .navbar-mobile-menu -->
+
+<section class="search-form-mobile" id="search_form_mobile">
+	<div class="container">
+		
+		<div class="search-form-mobile-flex">
+			<form action="">
+				<button type="submit">
+					<?php echo file_get_contents("image/search-icon.svg"); ?>
+				</button>
+				<input type="text" name="s" placeholder="Cari artikel">
+				<button type="button" class="toggle-search-form-mobile">
+					<?php echo file_get_contents("image/close-icon.svg"); ?>
+				</button>
+			</form>
 		</div>
 
 	</div>
-</nav>
+</section>
