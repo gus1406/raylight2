@@ -96,7 +96,7 @@
 				</a>
 			</div><!-- .navbar-main-site-branding -->
 			<div class="navbar-main-ads">
-				<img src="image/ads_nav.png" alt="ads">
+				<img src="image/ads_728_90.jpg" alt="ads">
 			</div><!-- .navbar-main-ads -->
 		</div><!-- .navbar-main-flex -->
 
@@ -189,7 +189,7 @@
 					<?php echo file_get_contents("image/close-icon.svg"); ?>
 				</button>
 			</form>
-		</div>
+		</div><!-- .search-form-mobile-flex -->
 
-	</div>
-</section>
+	</div><!-- .container -->
+</section><!-- .search-form-mobile -->

@@ -33,6 +33,7 @@
  * --- # Posts Main
  * --- # Posts Main Pagination
  * - # Main Right
+ * --- # Sidebar
  * 
  * # Posts Bottom Main
  * 
@@ -726,7 +727,7 @@ a {
  */
 
 .main {
-	margin-top: 40px;
+	margin-top: 35px;
 	display: inline-block;
 	width: 100%;
 }
@@ -856,7 +857,7 @@ a {
  */
 
 .posts-main {
-	margin-top: 40px;
+	margin-top: 30px;
 }
 
 .posts-main.paged {

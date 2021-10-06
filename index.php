@@ -10,6 +10,8 @@
 	</div><!-- .container -->
 </section><!-- .posts-bottom-menu -->
 
+<?php include 'template-parts/ads/ads-section-1.php'; ?>
+
 <main class="main" id="Main">
 	<div class="container">
 		
@@ -21,6 +23,9 @@
 
 				</div><!-- .swiper-wrapper -->
 			</div><!-- .swiper -->
+
+			<?php include 'template-parts/ads/ads-section-2.php'; ?>
+
 			<div class="posts-main">
 				
 				<?php include 'template-parts/post/post-main.php'; ?>
@@ -42,7 +47,9 @@
 	</div><!-- .container -->
 </main><!-- .main -->
 
-<div class="posts-bottom-main">
+<?php include 'template-parts/ads/ads-section-3.php'; ?>
+
+<section class="posts-bottom-main">
 	<div class="container">
 		<div class="posts-bottom-main-flex">
 			
@@ -50,6 +57,6 @@
 
 		</div><!-- posts-bottom-main-flex -->
 	</div><!-- .container -->
-</div><!-- .posts-bottom-main -->
+</section><!-- .posts-bottom-main -->
 
 <?php include 'footer.php'; ?>
