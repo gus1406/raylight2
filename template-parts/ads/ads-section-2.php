@@ -18,7 +18,7 @@
 					vertical-align: middle;
 				}
 
-				@media (max-width: 580px) {
+				@media (max-width: 968px) {
 					.ads-section-2-content {
 						width: auto;
 						height: auto;
@@ -29,5 +29,5 @@
 			<div class="ads-section-2">
 				<div class="ads-section-2-content">
 					<img src="image/ads_580_140.jpg" alt="ads">
-				</div>
-			</div>
+				</div><!-- .ads-section-2-content -->
+			</div><!-- .ads-section-2 -->

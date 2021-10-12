@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="css/normalize.css" type="text/css">
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" type="text/css">
-	<link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 	
 </head>
 <body>
@@ -38,10 +38,10 @@
 			<div class="navbar-top-right">
 				<ul class="remove-list">
 					<li><span>Kamis, 30 September 2021</span></li>
-					<li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
-					<li><a href="#"><i class="lni lni-twitter-filled"></i></a></li>
-					<li><a href="#"><i class="lni lni-instagram-original"></i></a></li>
-					<li><a href="#"><i class="lni lni-youtube"></i></a></li>
+					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+					<li><a href="#"><i class="fab fa-youtube"></i></a></li>
 				</ul>
 			</div><!-- .navbar-top-right -->
 		</div><!-- .navbar-top-flex -->
@@ -74,10 +74,10 @@
 
 		<div class="navbar-menu-slide-footer">
 			<p>
-				<a href="#"><i class="lni lni-facebook-filled"></i></a>
-				<a href="#"><i class="lni lni-twitter-filled"></i></a>
-				<a href="#"><i class="lni lni-instagram-original"></i></a>
-				<a href="#"><i class="lni lni-youtube"></i></a>
+				<a href="#"><i class="fab fa-facebook-f"></i></a>
+				<a href="#"><i class="fab fa-twitter"></i></a>
+				<a href="#"><i class="fab fa-instagram"></i></a>
+				<a href="#"><i class="fab fa-youtube"></i></a>
 			</p>
 			<p>Copyright © 2021 - <a href="#">Raylight</a> - All Right Reserved</p>
 		</div><!-- .navbar-menu-slide-footer -->

@@ -31,7 +31,7 @@
 		
 		<div class="ads-section-3-content">
 			<img src="image/ads_930_180.jpg" alt="ads">
-		</div>
+		</div><!-- .ads-section-3-content -->
 
-	</div>
-</section>
+	</div><!-- .container -->
+</section><!-- .ads-section-3 -->
