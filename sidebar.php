@@ -1,3 +1,6 @@
+		<div class="main-right main-right-sticky">
+			<aside class="sidebar">
+
 				<aside class="widget widget_archive">
 					<h3 class="widget-title">Arsip blog</h3>
 					<ul>
@@ -132,3 +135,6 @@
 						<p>Progressively coordinate diverse information before interdependent content. Seamlessly envisioneer frictionless e-commerce via diverse core competencies. Continually harness customer directed alignments.</p>
 					</div>
 				</aside>-->
+
+			</aside><!-- .sidebar -->
+		</div><!-- .main-right -->

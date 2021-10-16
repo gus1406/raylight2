@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#0e19a9">
 	<title>Raylight - Blog Wordpress Theme</title>
 
 	<link rel="stylesheet" href="css/normalize.css" type="text/css">

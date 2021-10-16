@@ -3,33 +3,12 @@
 		
 		<div class="footer-flex">
 			<div class="footer-column">
-				<aside class="widget widget_text">
-					<h3 class="widget-title">Raylight</h3>
-					<div>
-						<p>
-							<b>Digitalkit - Digital Agency Indonesia</b> <br>
-							Jl. Rajawali No. 25 <br>
-							Pesiapan, Tabanan, Bali, Indonesia <br>
-							Telp: +6285-737-548-643 <br>
-							Email: digitalkit.id@gmail.com
-						</p>
-					</div>
-				</aside>
-			</div><!-- .footer-column -->
-			<div class="footer-column">
-				<aside class="widget widget_nav_menu">
-					<h3 class="widget-title">Menu</h3>
-					<ul>
-						<li><a href="#">World</a></li>
-						<li><a href="#">Economy</a></li>
-						<li><a href="#">Business</a></li>
-						<li><a href="#">Culture</a></li>
-						<li><a href="#">Politics</a></li>
-						<li><a href="#">Lifestyle</a></li>
-						<li><a href="#">Tech</a></li>
-						<li><a href="#">Covid-19</a></li>
-					</ul>
-				</aside>
+				<div class="footer-site-branding">
+					<a href="#">
+						<img src="image/logo_raylight.png" alt="logo">
+					</a>
+				</div>
+				div.footer-copy
 			</div><!-- .footer-column -->
 			<div class="footer-column">
 				<aside class="widget widget_pages">
@@ -58,9 +37,7 @@
 	</div><!-- .container -->
 </footer><!-- .footer -->
 
-<footer class="footer-copy" id="footer_copy">
-	<p>Copyright © 2021 - <a href="#">Raylight</a> - All right reserved</p>
-</footer><!-- .footer-copy -->
+
 
 <section class="go-top" id="go_top">
 	<span><?php echo file_get_contents("image/arrow-up-icon.svg"); ?></span>

@@ -5,7 +5,7 @@
 				<section class="post-bottom-menu-entry">
 					<h1 class="post-bottom-menu-title">
 						<a href="#">
-							Mengenal Suku Pedalaman Indonesia yang Masih Lestari di Tengah Gerakan Modern.
+							3 Perwira Polisi Polda Sumatra Utara terima penghargaan dari Kapolri.
 						</a>
 					</h1>
 					<span class="post-bottom-menu-date">

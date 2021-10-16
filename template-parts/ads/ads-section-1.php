@@ -1,7 +1,7 @@
 <style>
 	.ads-section-1 {
 		width: 100%;
-		margin-top: 35px;
+		margin-top: 30px;
 	}
 
 	.ads-section-1-content {

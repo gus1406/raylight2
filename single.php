@@ -192,13 +192,9 @@
 			</div><!-- .main-single -->
 
 		</div><!-- .main-left -->
-		<div class="main-right main-right-sticky">
-			<aside class="sidebar">
-				
-				<?php include 'sidebar.php'; ?>
-
-			</aside><!-- .sidebar -->
-		</div><!-- .main-right -->
+		
+		<?php include 'sidebar.php'; ?>
+		
 		<div style="clear: both;"></div>
 
 	</div><!-- .container -->
