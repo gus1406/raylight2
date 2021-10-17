@@ -8,7 +8,9 @@
 						<img src="image/logo_raylight.png" alt="logo">
 					</a>
 				</div>
-				div.footer-copy
+				<div class="footer-copy">
+					<span><small>Copyright © 2021 - <a href="#">Raylight.</a> All Right Reserved</small></span>
+				</div>
 			</div><!-- .footer-column -->
 			<div class="footer-column">
 				<aside class="widget widget_pages">
@@ -22,15 +24,15 @@
 				</aside>
 			</div><!-- .footer-column -->
 			<div class="footer-column">
-				<aside class="widget widget_pages">
-					<h3 class="widget-title">Laman</h3>
-					<ul>
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Contact</a></li>
-						<li><a href="#">Disclaimer</a></li>
-						<li><a href="#">Privacy Policy</a></li>
+				<div class="footer-social-media">
+					<h3 class="footer-social-media-title">Ikuti Kami</h3>
+					<ul class="remove-list">
+						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+						<li><a href="#"><i class="fab fa-youtube"></i></a></li>
 					</ul>
-				</aside>
+				</div>
 			</div><!-- .footer-column -->
 		</div><!-- .footer-flex -->
 

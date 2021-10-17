@@ -24,6 +24,12 @@
 						height: auto;
 					}
 				}
+
+				@media (max-width: 468px) {
+					.ads-section-2 {
+						margin-top: 15px;
+					}
+				}
 			</style>		
 	
 			<div class="ads-section-2">

@@ -27,7 +27,7 @@
 
 	@media (max-width: 468px) {
 		.ads-section-1 {
-			margin-top: 30px;
+			margin-top: 15px;
 		}
 	}
 </style>
