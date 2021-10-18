@@ -45,10 +45,7 @@
 	<span><?php echo file_get_contents("image/arrow-up-icon.svg"); ?></span>
 </section><!-- .go-top -->
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="js/js-jquery.js" type="text/javascript"></script>
-<script src="js/js.js" type="text/javascript"></script>
-<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<?php wp_footer(); ?>
 
 <script>
 	var swiper = new Swiper('.swiper',{

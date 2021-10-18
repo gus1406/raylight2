@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?>>
 <head>
-	<meta charset="UTF-8">
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="theme-color" content="#0e19a9">
-	<title>Raylight - Blog Wordpress Theme</title>
+	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<link rel="stylesheet" href="css/normalize.css" type="text/css">
-	<link rel="stylesheet" href="css/style.css" type="text/css">
-	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" type="text/css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+	<?php wp_head(); ?>
 	
 </head>
-<body>
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 
 <nav class="navbar-top" id="navbar_top">
 	<div class="container">
@@ -22,15 +20,15 @@
 				<ul class="remove-list">
 					<li>
 						<span id="open_nav_menu_slide">
-							<?php echo file_get_contents("image/menu-icon-1.svg"); ?>
+							<?php echo file_get_contents(get_template_directory() . "/image/menu-icon-1.svg"); ?>
 						</span> 
-						<b>Menu</b>
+						<b><?php _e( 'Menu', 'raylight' ); ?></b>
 					</li>
 					<li>
 						<form action="" class="navbar-top-left-form">
-							<input type="text" name="s" placeholder="Cari artikel">
+							<input type="text" name="s" placeholder="<?php esc_attr_e( 'Cari artikel', 'raylight' ); ?>">
 							<button type="submit">
-								<?php echo file_get_contents("image/search-icon.svg"); ?>
+								<?php echo file_get_contents(get_template_directory() . "/image/search-icon.svg"); ?>
 							</button>
 						</form>
 					</li>
@@ -38,7 +36,7 @@
 			</div><!-- .navbar-top-left -->
 			<div class="navbar-top-right">
 				<ul class="remove-list">
-					<li><span>Kamis, 30 September 2021</span></li>
+					<li><span><?php get_template_part( 'template-parts/date' ); ?></span></li>
 					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
 					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
 					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
