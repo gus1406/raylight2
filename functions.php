@@ -165,4 +165,42 @@ function raylight_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'raylight_scripts' );
 
+/**
+ * Raylight custom logo
+ * 
+ * @link https://developer.wordpress.org/themes/functionality/custom-logo/
+ */
+function raylight_custom_logo() {
+	
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+	$logo = wp_get_attachment_image_src( $custom_logo_id, 'full' );
+
+	if ( has_custom_logo() ) {
+		echo '<a href="' . esc_url( home_url( '/' ) ) . '"><img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '"></a>';
+	} else {
+		echo '<h1><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . bloginfo( 'name' ) . '</a></h1>';
+	}
+}
+
+function social_media_url( $social_media ) {
+	$fb = get_theme_mod( 'facebook_url' );
+	$tw = get_theme_mod( 'twitter_url' );
+	$ig = get_theme_mod( 'instagram_url' );
+	$yt = get_theme_mod( 'youtube_url' );
+
+	if ( $social_media == "facebook_url" ) {
+		echo esc_url( $fb );
+	} else if ( $social_media == "twitter_url" ) {
+		echo esc_url( $tw );
+	} else if ( $social_media == "instagram_url" ) {
+		echo esc_url( $ig );
+	} else if ( $social_media == "youtube_url" ) {
+		echo esc_url( $yt );
+	}
+}
+
+/**
+ * Customizer
+ */
+require get_template_directory() . '/inc/customizer.php';
 ?>

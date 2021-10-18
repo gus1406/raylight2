@@ -395,7 +395,7 @@ a {
 .navbar-main-ads {
 	overflow: hidden;
 	width: 728px;
-	height: 90px;
+	height: auto;
 }
 
 .navbar-main-ads img {

@@ -1,3 +1,12 @@
+<?php
+/*
+ * The header for our theme
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package raylight
+ */
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -37,10 +46,10 @@
 			<div class="navbar-top-right">
 				<ul class="remove-list">
 					<li><span><?php get_template_part( 'template-parts/date' ); ?></span></li>
-					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-					<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+					<li><a href="<?php social_media_url( 'facebook_url' ); ?>"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href="<?php social_media_url( 'twitter_url' ); ?>"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="<?php social_media_url( 'instagram_url' ); ?>"><i class="fab fa-instagram"></i></a></li>
+					<li><a href="<?php social_media_url( 'youtube_url' ); ?>"><i class="fab fa-youtube"></i></a></li>
 				</ul>
 			</div><!-- .navbar-top-right -->
 		</div><!-- .navbar-top-flex -->
@@ -89,13 +98,17 @@
 		
 		<div class="navbar-main-flex">
 			<div class="navbar-main-site-branding">
-				<!--<h1><a href="#">Raylight</a></h1>-->
-				<a href="#">
-					<img src="image/logo_raylight.png" alt="logo">
-				</a>
+
+				<?php raylight_custom_logo() ?>
+
 			</div><!-- .navbar-main-site-branding -->
 			<div class="navbar-main-ads">
-				<img src="image/ads_728_90.jpg" alt="ads">
+
+				<?php
+					$ads_header = get_theme_mod( 'setting_ads_header' );
+					echo $ads_header;
+				?>
+
 			</div><!-- .navbar-main-ads -->
 		</div><!-- .navbar-main-flex -->
 
@@ -107,17 +120,13 @@
 		
 		<div class="navbar-menu-flex">
 			<div class="navbar-menu-menu">
-				<ul>
-					<li><a href="#">Beranda</a></li>
-					<li><a href="#">Dunia</a></li>
-					<li><a href="#">Ekonomi</a></li>
-					<li><a href="#">Bisnis</a></li>
-					<li><a href="#">Budaya</a></li>
-					<li><a href="#">Politik</a></li>
-					<li><a href="#">Gaya Hidup</a></li>
-					<li><a href="#">Teknologi</a></li>
-					<li><a href="#">Covid-19</a></li>
-				</ul>
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'main-menu',
+					)
+				);
+				?>
 			</div><!-- .navbar-menu-menu -->
 		</div><!-- .navbar-menu-flex -->
 
