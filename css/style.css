@@ -35,12 +35,12 @@
  * --- # Posts Main Pagination
  * --- # Main Single
  * - # Main Right
- * --- # Sidebar
+ * 
+ * # Main 404
  * 
  * # Posts Bottom Main
  * 
  * # Footer
- * # Footer Copy
  * 
  * # Widget styles
  * 
@@ -1004,7 +1004,7 @@ a {
 /* main single breadcrumbs */
 
 .main-single-breadcrumbs {
-	font-size: 15px;
+	font-size: 14px;
 	color: var(--tint7);
 }
 
@@ -1050,7 +1050,7 @@ a {
 
 .main-single-excerpt p {
 	margin: 0 0 15px 0;
-	font-size: 15.5px;
+	font-size: 15px;
 	line-height: 1.5;
 	color: var(--tint5);
 	text-align: center;
@@ -1462,6 +1462,40 @@ a {
 }
 
 /**
+ * Main 404
+ */
+
+.main-404 {
+	overflow: hidden;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.main-404-container {
+	text-align: center;
+}
+
+.main-404-title {
+	font-size: 100px;
+	margin: 0;
+}
+
+.main-404-desc {
+	font-size: 20px;
+	margin: 10px 0;
+	line-height: 1.4;
+}
+
+.main-404-home-link a {
+	font-weight: 700;
+	color: var(--black);
+	text-decoration: underline;
+}
+
+/**
  * Posts Bottom Main
  */
 
@@ -1499,7 +1533,7 @@ a {
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	height: 150px;
+	height: 140px;
 	border-radius: 4px;
 }
 
