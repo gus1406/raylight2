@@ -182,6 +182,9 @@ function raylight_custom_logo() {
 	}
 }
 
+/**
+ * Raylight social media url
+ */
 function social_media_url( $social_media ) {
 	$fb = get_theme_mod( 'facebook_url' );
 	$tw = get_theme_mod( 'twitter_url' );
@@ -196,6 +199,17 @@ function social_media_url( $social_media ) {
 		echo esc_url( $ig );
 	} else if ( $social_media == "youtube_url" ) {
 		echo esc_url( $yt );
+	}
+}
+
+/**
+ * Raylight advertisement code
+ */
+function raylight_ads_code( $ads ) {
+	$ads_header = get_theme_mod( 'setting_ads_header' );
+
+	if ( $ads == "ads_header" ) {
+		echo $ads_header;
 	}
 }
 

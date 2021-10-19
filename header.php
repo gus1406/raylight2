@@ -34,12 +34,7 @@
 						<b><?php _e( 'Menu', 'raylight' ); ?></b>
 					</li>
 					<li>
-						<form action="" class="navbar-top-left-form">
-							<input type="text" name="s" placeholder="<?php esc_attr_e( 'Cari artikel', 'raylight' ); ?>">
-							<button type="submit">
-								<?php echo file_get_contents(get_template_directory() . "/image/search-icon.svg"); ?>
-							</button>
-						</form>
+						<?php get_search_form(); ?>
 					</li>
 				</ul>
 			</div><!-- .navbar-top-left -->
@@ -62,32 +57,22 @@
 		
 		<div class="navbar-menu-slide-header">
 			<div class="close-navbar-menu-slide">
-				<?php echo file_get_contents("image/close-icon.svg"); ?>
+				<?php echo file_get_contents(get_template_directory() . "/image/close-icon.svg"); ?>
 			</div><!-- .close-navbar-menu-slide -->
 		</div><!-- .navbar-menu-slide-header -->
 
 		<div class="navbar-menu-slide-content">
-			<ul>
-				<li><a href="#">Beranda</a></li>
-				<li><a href="#">Dunia</a></li>
-				<li><a href="#">Ekonomi</a></li>
-				<li><a href="#">Bisnis</a></li>
-				<li><a href="#">Budaya</a></li>
-				<li><a href="#">Politik</a></li>
-				<li><a href="#">Gaya Hidup</a></li>
-				<li><a href="#">Teknologi</a></li>
-				<li><a href="#">Covid-19</a></li>
-			</ul>
+			<?php wp_nav_menu( array( 'theme_location' => 'menu-slide' ) ); ?>
 		</div><!-- .navbar-menu-slide-content -->
 
 		<div class="navbar-menu-slide-footer">
 			<p>
-				<a href="#"><i class="fab fa-facebook-f"></i></a>
-				<a href="#"><i class="fab fa-twitter"></i></a>
-				<a href="#"><i class="fab fa-instagram"></i></a>
-				<a href="#"><i class="fab fa-youtube"></i></a>
+				<a href="<?php social_media_url( 'facebook_url' ); ?>"><i class="fab fa-facebook-f"></i></a>
+				<a href="<?php social_media_url( 'twitter_url' ); ?>"><i class="fab fa-twitter"></i></a>
+				<a href="<?php social_media_url( 'instagram_url' ); ?>"><i class="fab fa-instagram"></i></a>
+				<a href="<?php social_media_url( 'youtube_url' ); ?>"><i class="fab fa-youtube"></i></a>
 			</p>
-			<p>Copyright © 2021 - <a href="#">Raylight</a> - All Right Reserved</p>
+			<p><?php _e( 'Copyright © 2021', 'raylight' ); ?> - <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo bloginfo( 'name' ); ?></a> - <?php _e( 'All Right Reserved', 'raylight' ); ?></p>
 		</div><!-- .navbar-menu-slide-footer -->
 
 	</div><!-- .navbar-menu-slide-container -->
@@ -99,15 +84,12 @@
 		<div class="navbar-main-flex">
 			<div class="navbar-main-site-branding">
 
-				<?php raylight_custom_logo() ?>
+				<?php raylight_custom_logo(); ?>
 
 			</div><!-- .navbar-main-site-branding -->
 			<div class="navbar-main-ads">
 
-				<?php
-					$ads_header = get_theme_mod( 'setting_ads_header' );
-					echo $ads_header;
-				?>
+				<?php raylight_ads_code( 'ads_header' ); ?>
 
 			</div><!-- .navbar-main-ads -->
 		</div><!-- .navbar-main-flex -->
@@ -120,13 +102,9 @@
 		
 		<div class="navbar-menu-flex">
 			<div class="navbar-menu-menu">
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'main-menu',
-					)
-				);
-				?>
+
+				<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+
 			</div><!-- .navbar-menu-menu -->
 		</div><!-- .navbar-menu-flex -->
 
@@ -142,20 +120,19 @@
 
 			<div class="navbar-mobile-menu-button">
 				<span id="navbar_mobile_open_menu_slide">
-					<?php echo file_get_contents("image/menu-icon.svg"); ?>
+					<?php echo file_get_contents(get_template_directory() . "/image/menu-icon.svg"); ?>
 				</span>
 			</div><!-- .navbar-mobile-menu-button -->
 
 			<div class="navbar-mobile-site-branding">
-				<!--<h1><a href="#">Raylight</a></h1>-->
-				<a href="#">
-					<img src="image/logo_raylight.png" alt="logo">
-				</a>
+
+				<?php raylight_custom_logo(); ?>
+
 			</div><!-- .navbar-mobile-site-branding -->
 
 			<div class="navbar-mobile-search-button">
 				<span class="toggle-search-form-mobile">
-					<?php echo file_get_contents("image/search-icon.svg"); ?>
+					<?php echo file_get_contents(get_template_directory() . "/image/search-icon.svg"); ?>
 				</span>
 			</div><!-- .navbar-mobile-search-button -->
 
@@ -168,17 +145,9 @@
 	<div class="container">
 		
 		<div class="navbar-mobile-menu-flex">
-			<ul>
-				<li><a href="#">Beranda</a></li>
-				<li><a href="#">Dunia</a></li>
-				<li><a href="#">Ekonomi</a></li>
-				<li><a href="#">Bisnis</a></li>
-				<li><a href="#">Budaya</a></li>
-				<li><a href="#">Politik</a></li>
-				<li><a href="#">Gaya Hidup</a></li>
-				<li><a href="#">Teknologi</a></li>
-				<li><a href="#">Covid-19</a></li>
-			</ul>
+			
+			<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+
 		</div><!-- .navbar-mobile-menu-flex -->
 
 	</div><!-- .container -->
@@ -188,15 +157,9 @@
 	<div class="container">
 		
 		<div class="search-form-mobile-flex">
-			<form action="">
-				<button type="submit">
-					<?php echo file_get_contents("image/search-icon.svg"); ?>
-				</button>
-				<input type="text" name="s" placeholder="Cari artikel">
-				<button type="button" class="toggle-search-form-mobile">
-					<?php echo file_get_contents("image/close-icon.svg"); ?>
-				</button>
-			</form>
+			
+			<?php get_template_part( 'template-parts/searchformmobile' ); ?>
+
 		</div><!-- .search-form-mobile-flex -->
 
 	</div><!-- .container -->
