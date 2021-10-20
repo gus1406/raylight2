@@ -90,7 +90,7 @@
 			<div class="navbar-main-ads">
 
 				<?php raylight_ads_code( 'ads_header' ); ?>
-
+				
 			</div><!-- .navbar-main-ads -->
 		</div><!-- .navbar-main-flex -->
 

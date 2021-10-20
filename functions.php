@@ -207,10 +207,36 @@ function social_media_url( $social_media ) {
  */
 function raylight_ads_code( $ads ) {
 	$ads_header = get_theme_mod( 'setting_ads_header' );
+	$ads_section_1 = get_theme_mod( 'setting_ads_section_1' );
 
 	if ( $ads == "ads_header" ) {
 		echo $ads_header;
+	} else if ( $ads == "ads_section_1" ) {
+		echo $ads_section_1;
 	}
+}
+
+/**
+ * Raylight post thumbnail
+ */
+function raylight_post_thumbnail() {
+	$post_thumbnail = get_the_post_thumbnail_url( get_the_ID() );
+
+	if ( has_post_thumbnail() ) {
+		echo '<a href="' . get_permalink() . '"><img src="' . esc_url( $post_thumbnail ) . '" ></a>';
+	}
+}
+
+/**
+ * Raylight post class
+ * 
+ * @link https://developer.wordpress.org/reference/functions/get_post_class/ 
+ */
+function raylight_post_class() {
+	global $post;
+	$get_post_class = get_post_class( '', $post->ID );
+	$post_class = esc_attr( implode( ' ', $get_post_class ) );
+	echo $post_class;
 }
 
 /**

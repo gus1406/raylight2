@@ -1,16 +1,16 @@
-<?php include 'header.php'; ?>
+<?php get_header(); ?>
 
 <section class="posts-bottom-menu">
 	<div class="container">		
 		<div class="posts-bottom-menu-flex">
 			
-			<?php include 'template-parts/post/post-bottom-menu.php'; ?>
+			<?php get_template_part( 'template-parts/post/post', 'bottom-menu' ); ?>
 
 		</div><!-- .posts-bottom-menu-flex -->
 	</div><!-- .container -->
 </section><!-- .posts-bottom-menu -->
 
-<?php include 'template-parts/ads/ads-section-1.php'; ?>
+<?php get_template_part( 'template-parts/ads/ads', 'section-1' ); ?>
 
 <main class="main" id="Main">
 	<div class="container">
@@ -19,7 +19,7 @@
 			<div class="swiper posts-swiper">
 				<div class="swiper-wrapper">
 					
-					<?php include 'template-parts/post/post-swiper.php'; ?>
+					<?php get_template_part( 'template-parts/post/post', 'swiper' ); ?>
 
 				</div><!-- .swiper-wrapper -->
 			</div><!-- .swiper -->

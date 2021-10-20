@@ -7,7 +7,7 @@
 	.ads-section-1-content {
 		overflow: hidden;
 		width: 930px;
-		height: 180px;
+		height: auto;
 		margin: 0 auto;
 	}
 
@@ -36,7 +36,9 @@
 	<div class="container">
 		
 		<div class="ads-section-1-content">
-			<img src="image/ads_930_180.jpg" alt="ads">
+			
+			<?php raylight_ads_code( 'ads_section_1' ); ?>
+
 		</div><!-- .ads-section-1-content -->
 
 	</div><!-- .container -->

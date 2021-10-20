@@ -1,45 +1,33 @@
-			<article class="post-bottom-menu">
+			<?php
+			$args_post_bottom_menu = array(
+				'post_type' => 'post',
+				'posts_per_page' => 3,
+				'category_name' => '',
+				'ignore_sticky_posts' => true,
+			);
+
+			$post_bottom_menu = new WP_Query( $args_post_bottom_menu );
+
+			if ( $post_bottom_menu->have_posts() ) :
+				while ( $post_bottom_menu->have_posts() ) : $post_bottom_menu->the_post();
+			?>
+
+			<article id="post-<?php the_ID(); ?>" class="post-bottom-menu <?php raylight_post_class(); ?>">
 				<figure class="post-bottom-menu-image">
-					<a href="#"><img src="image/img1.jpg" alt="thumbnail"></a>
+					<?php raylight_post_thumbnail(); ?>
 				</figure>
 				<section class="post-bottom-menu-entry">
 					<h1 class="post-bottom-menu-title">
-						<a href="#">
-							3 Perwira Polisi Polda Sumatra Utara terima penghargaan dari Kapolri.
-						</a>
+						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 					</h1>
 					<span class="post-bottom-menu-date">
-						30 September 2021
+						<?php the_date(); ?>
 					</span>
 				</section>
 			</article>
-			<article class="post-bottom-menu">
-				<figure class="post-bottom-menu-image">
-					<a href="#"><img src="image/img2.jpg" alt="thumbnail"></a>
-				</figure>
-				<section class="post-bottom-menu-entry">
-					<h1 class="post-bottom-menu-title">
-						<a href="#">
-							Hanya pada saat Lockdown Kita Bisa Menyaksikan Cerahnya Langit Biru.
-						</a>
-					</h1>
-					<span class="post-bottom-menu-date">
-						30 September 2021
-					</span>
-				</section>
-			</article>
-			<article class="post-bottom-menu">
-				<figure class="post-bottom-menu-image">
-					<a href="#"><img src="image/img3.jpg" alt="thumbnail"></a>
-				</figure>
-				<section class="post-bottom-menu-entry">
-					<h1 class="post-bottom-menu-title">
-						<a href="#">
-							Tarif Angkut Kontainer Semakin Hari Semakin Meningkat.
-						</a>
-					</h1>
-					<span class="post-bottom-menu-date">
-						30 September 2021
-					</span>
-				</section>
-			</article>
+			
+			<?php
+				endwhile;
+				$post_bottom_menu->reset_postdata();
+			endif;
+			?>

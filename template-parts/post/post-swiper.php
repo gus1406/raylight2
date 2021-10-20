@@ -1,72 +1,38 @@
+					<?php
+					query_posts( 
+						array( 
+							'post__in' => get_option( 'sticky_posts' ),
+							'posts_per_page' => 5,
+						) 
+					);
+
+					if ( have_posts() ) :
+						while ( have_posts() ) : the_post();
+					?>
 					<div class="swiper-slide">
 						
-						<article class="post-swiper">
+						<article id="post-<?php the_ID(); ?>" class="post-swiper <?php raylight_post_class(); ?>">
 							<figure class="post-swiper-image">
-								<a href="#">
-									<img src="image/img1.jpg" alt="thumbnail">
-								</a>
+								<?php raylight_post_thumbnail(); ?>
 							</figure>
 							<section class="post-swiper-entry">
 								<div class="post-swiper-category">
-									<a href="#">Business</a>
+									<?php the_category( ' ' ); ?>
 								</div>
 								<h1 class="post-swiper-title">
-									<a href="#">Phosfluorescently drive just in time interfaces with superior platforms.</a>
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 								</h1>
 								<div class="post-swiper-datapost">
-									<span><a href="#">Admin</a></span>
+									<span><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php the_author(); ?></a></span>
 									<span class="separator">/</span>
-									<span>30 September 2021</span>
+									<span><?php the_date(); ?></span>
 								</div>
 							</section>
 						</article>
 
 					</div>
-					<div class="swiper-slide">
-						
-						<article class="post-swiper">
-							<figure class="post-swiper-image">
-								<a href="#">
-									<img src="image/img2.jpg" alt="thumbnail">
-								</a>
-							</figure>
-							<section class="post-swiper-entry">
-								<div class="post-swiper-category">
-									<a href="#">Business</a>
-								</div>
-								<h1 class="post-swiper-title">
-									<a href="#">Compellingly plagiarize user centric manufactured products with cost.</a>
-								</h1>
-								<div class="post-swiper-datapost">
-									<span><a href="#">Admin</a></span>
-									<span class="separator">/</span>
-									<span>30 September 2021</span>
-								</div>
-							</section>
-						</article>
-
-					</div>
-					<div class="swiper-slide">
-						
-						<article class="post-swiper">
-							<figure class="post-swiper-image">
-								<a href="#">
-									<img src="image/img3.jpg" alt="thumbnail">
-								</a>
-							</figure>
-							<section class="post-swiper-entry">
-								<div class="post-swiper-category">
-									<a href="#">Business</a>
-								</div>
-								<h1 class="post-swiper-title">
-									<a href="#">Proactively morph web-enabled mindshare via front-end ideas.</a>
-								</h1>
-								<div class="post-swiper-datapost">
-									<span><a href="#">Admin</a></span>
-									<span class="separator">/</span>
-									<span>30 September 2021</span>
-								</div>
-							</section>
-						</article>
-
-					</div>
+					<?php
+						endwhile;
+						wp_reset_query();
+					endif;
+					?>

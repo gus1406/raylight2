@@ -78,7 +78,16 @@ function raylight_customizer_register( $wpc ) {
 		'panel' => 'panel_ads',
 	) );
 
+	$wpc->add_section( 'section_ads_section_1', array(
+		'title' => __( 'Iklan bagian 1', 'raylight' ),
+		'panel' => 'panel_ads',
+	) );
+
 	$wpc->add_setting( 'setting_ads_header', array(
+		'sanitize_callback' => false,
+	) );
+
+	$wpc->add_setting( 'setting_ads_section_1', array(
 		'sanitize_callback' => false,
 	) );
 
@@ -86,6 +95,13 @@ function raylight_customizer_register( $wpc ) {
 		'label' => __( 'Kode Iklan', 'raylight' ),
 		'section' => 'section_ads_header',
 		'settings' => 'setting_ads_header',
+		'type' => 'textarea',
+	) );
+
+	$wpc->add_control( 'control_ads_section_1', array(
+		'label' => __( 'Kode Iklan', 'raylight' ),
+		'section' => 'section_ads_section_1',
+		'settings' => 'setting_ads_section_1',
 		'type' => 'textarea',
 	) );
 }
