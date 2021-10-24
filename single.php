@@ -1,99 +1,94 @@
-<?php include 'header.php'; ?>
+<?php get_header(); ?>
 
-<?php include 'template-parts/ads/ads-section-1.php'; ?>
+<?php get_template_part( 'template-parts/ads/ads', 'section-1' ); ?>
 
 <main class="main" id="Main">
 	<div class="container">
 		
 		<div class="main-left">
 
+			<?php
+			if ( have_posts() ) :
+				while ( have_posts() ) : the_post();
+			?>
+
 			<div class="main-single">
 				
 				<div class="main-single-breadcrumbs">
-					<span><a href="#">Beranda</a></span>
-					<span class="breadcrumbs__separator">/</span>
-					<span><a href="#">Bisnis</a></span>
+					<?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
 				</div><!-- .main-single-breadcrumbs -->
 
 				<div class="main-single-title">
-					<h1><a href="#">Doctors take inspiration from online dating to build organ transplant AI.</a></h1>
+					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 				</div><!-- .main-single-title -->
 
+				<?php if ( has_excerpt() ) : ?>
 				<div class="main-single-excerpt">
-					<p>Quickly evolve sticky e-tailers vis-a-vis B2B technologies. Efficiently formulate effective synergy via fully tested core competencies. Dynamically provide access to user-centric portals before.</p>
+					<p><?php echo get_the_excerpt(); ?></p>
 				</div><!-- .main-single-excerpt -->
+				<?php endif; ?>
 
 				<div class="main-single-metadata">
 					<div class="main-single-date">
-						<span>Selasa, 12 Oktober 2021 - 14:51</span>
+						<span><?php the_date(); ?> - <?php the_time(); ?></span>
 					</div><!-- .main-single-date -->
 					<div class="metadata-box">
 						<div class="main-single-admin">
-							<a href="#">Agus Darma - Raylight</a>
+							<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php the_author(); ?></a>
 						</div>
 						<div class="main-single-comments-count">
-							<a href="#"><i class="fas fa-comment"></i> Komentar: 24</a>
+							<a href="#"><i class="fas fa-comment"></i> <?php _e( 'Komentar: ', 'raylight' ); echo get_comments_number(); ?></a>
 						</div>
 					</div><!-- metadata-box -->
 				</div><!-- .main-single-metadata -->
 
 				<figure class="main-single-featured-image">
-					<a href="#">
-						<img src="image/img2.jpg" alt="featured-image">
-					</a>
+					<?php raylight_post_thumbnail(); ?>
 				</figure><!-- .main-single-featured-image -->
 
 				<div class="main-single-content">
-					<h1>Efficiently formulate effective synergy via fully tested core competencies.</h1>
-
-					<p>Compellingly transition visionary materials after stand-alone solutions. Phosfluorescently aggregate best-of-breed niche markets rather than empowered potentialities. Quickly actualize equity invested relationships and adaptive sources. Professionally drive B2C total linkage vis-a-vis distinctive mindshare. Appropriately harness prospective "outside.</p>
-
-					<p>Compellingly transition visionary materials after stand-alone solutions. Phosfluorescently aggregate best-of-breed niche markets rather than empowered potentialities. Quickly actualize equity invested relationships and adaptive sources. Professionally drive B2C total linkage vis-a-vis distinctive mindshare. Appropriately harness prospective "outside.</p>
-
-					<blockquote>
-						<cite><b>Baca Juga:</b> <a href="#"><b>Pedulilindungi aplikasi untuk Download Sertifikat Vaksin Covid-19 dan Cek status vaksinasi.</b></a></cite>
-					</blockquote>
-
-					<p>Compellingly transition visionary materials after stand-alone solutions. Phosfluorescently aggregate best-of-breed niche markets rather than empowered potentialities. Quickly actualize equity invested relationships and adaptive sources. Professionally drive B2C total linkage vis-a-vis distinctive mindshare. Appropriately harness prospective "outside.</p>
-
-					<figure>
-						<a href="#">
-							<img src="image/img3.jpg" alt="image">
-						</a>
-						<figcaption>Gambar suatu pelabuhan, sumber pexels.com</figcaption>
-					</figure>
-
-					<p>Compellingly transition visionary materials after stand-alone solutions. Phosfluorescently aggregate best-of-breed niche markets rather than empowered potentialities. Quickly actualize equity invested relationships and adaptive sources. Professionally drive B2C total linkage vis-a-vis distinctive mindshare. Appropriately harness prospective "outside.</p>
-
-					<ul>
-						<li>List item 1</li>
-						<li>List item 2</li>
-						<li>List item 3</li>
-						<li>List item 4</li>
-						<li>List item 5</li>
-					</ul>
-
-					<p>Compellingly transition visionary materials after stand-alone solutions. Phosfluorescently aggregate best-of-breed niche markets rather than empowered potentialities. Quickly actualize equity invested relationships and adaptive sources. Professionally drive B2C total linkage vis-a-vis distinctive mindshare. Appropriately harness prospective "outside.</p>
+					<?php the_content(); ?>
 				</div><!-- .main-single-content -->
 
 				<div class="main-single-content-pagination">
-					<span class="page-links-title">Halaman:</span>
-					<a href="#">1</a>
-					<span class="current">2</span>
-					<a href="#">3</a>
-					<a href="#">4</a>
+					<?php
+					/*
+					 * page break with number
+					 *
+					 * @link https://developer.wordpress.org/reference/functions/wp_link_pages/
+					 */
+					wp_link_pages( array(
+						'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Halaman:', 'raylight' ) . '</span>',
+						'after' => '</div>',
+						'next_or_number' => 'number',
+						'nextpagelink' => '<span class="previous-next-link">' . __( 'Selanjutnya', 'raylight' ) . '</span>',
+						'previouspagelink' => '<span class="previous-next-link">' . __( 'Sebelumnya', 'raylight' ) . '</span>',
+						'link_before' => '<span class="link-number">',
+						'link_after' => '</span>',
+						
+					) );
+					?>
 				</div><!-- .main-single-content-pagination -->
 
 				<div class="main-single-tags">
-					<a href="#">Bisnis</a>
-					<a href="#">Ekonomi</a>
-					<a href="#">Warta</a>
-					<a href="#">Covid-19</a>
+					<?php
+					/*
+					 * Post tags
+					 */
+					$post_tags = get_the_tags();
+					if ( !empty( $post_tags ) ) {
+						foreach ( $post_tags as $tags ) {
+							echo '<a href="' . get_tag_link( $tags ) . '">' . $tags->name . '</a>';
+						}
+					} else {
+						
+					}
+					?>
 				</div><!-- .main-single-tags -->
 
 				<div class="main-single-share">
 					<div class="main-single-share-title">
-						<span>Bagikan:</span>
+						<span><?php _e( 'Bagikan:', 'raylight' ); ?></span>
 					</div>
 					<a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
 					<a href="#" class="tw"><i class="fab fa-twitter"></i></a>
@@ -103,103 +98,34 @@
 
 				<div class="main-single-author-box">
 					<div class="main-single-author-box-image">
-						<img src="image/author.jpg" alt="">
+						<?php echo get_avatar( get_the_author_meta('user_email')); ?>
 					</div><!-- .main-single-author-box-image -->
 					<div class="main-single-author-box-content">
-						<h3><a href="#">Agus Darma - Raylight</a></h3>
-						<p>Energistically synthesize robust process improvements whereas multimedia based infomediaries collaboratively synthesize.</p>
+						<h3><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php the_author(); ?></a></h3>
+						<p><?php echo get_the_author_meta( 'description' ); ?></p>
 					</div><!-- .main-single-author-box-content -->
 				</div><!-- .main-single-author-box -->
 
 				<div class="main-single-related">
-					<h2>Postingan Terakait</h2>
-					<ul>
-						<li>
-							<article class="post-related">
-								<figure class="post-related-image">
-									<a href="#">
-										<img src="image/img2.jpg" alt="thumbnail">
-									</a>
-								</figure>
-								<h1 class="post-related-title">
-									<a href="#">Energistically synthesize robust process improvements whereas.</a>
-								</h1>
-							</article>
-						</li>
-						<li>
-							<article class="post-related">
-								<figure class="post-related-image">
-									<a href="#">
-										<img src="image/img3.jpg" alt="thumbnail">
-									</a>
-								</figure>
-								<h1 class="post-related-title">
-									<a href="#">Energistically synthesize robust process improvements whereas.</a>
-								</h1>
-							</article>
-						</li>
-						<li>
-							<article class="post-related">
-								<figure class="post-related-image">
-									<a href="#">
-										<img src="image/img4.jpg" alt="thumbnail">
-									</a>
-								</figure>
-								<h1 class="post-related-title">
-									<a href="#">Energistically synthesize robust process improvements whereas.</a>
-								</h1>
-							</article>
-						</li>
-						<li>
-							<article class="post-related">
-								<figure class="post-related-image">
-									<a href="#">
-										<img src="image/img1.jpg" alt="thumbnail">
-									</a>
-								</figure>
-								<h1 class="post-related-title">
-									<a href="#">Energistically synthesize robust process improvements whereas.</a>
-								</h1>
-							</article>
-						</li>
-						<li>
-							<article class="post-related">
-								<figure class="post-related-image">
-									<a href="#">
-										<img src="image/img2.jpg" alt="thumbnail">
-									</a>
-								</figure>
-								<h1 class="post-related-title">
-									<a href="#">Energistically synthesize robust process improvements whereas.</a>
-								</h1>
-							</article>
-						</li>
-						<li>
-							<article class="post-related">
-								<figure class="post-related-image">
-									<a href="#">
-										<img src="image/img5.jpg" alt="thumbnail">
-									</a>
-								</figure>
-								<h1 class="post-related-title">
-									<a href="#">Energistically synthesize robust process improvements whereas.</a>
-								</h1>
-							</article>
-						</li>
-					</ul>
+					<?php get_template_part( 'template-parts/post/post', 'related' ); ?>
 				</div><!-- .main-single-related -->
 
 			</div><!-- .main-single -->
 
+			<?php
+				endwhile;
+			endif;
+			?>
+
 		</div><!-- .main-left -->
 		
-		<?php include 'sidebar.php'; ?>
+		<?php get_sidebar(); ?>
 		
 		<div style="clear: both;"></div>
 
 	</div><!-- .container -->
 </main><!-- .main -->
 
-<?php include 'template-parts/ads/ads-section-3.php'; ?>
+<?php get_template_part( 'template-parts/ads/ads', 'section-3' ); ?>
 
-<?php include 'footer.php'; ?>
+<?php get_footer(); ?>

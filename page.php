@@ -1,69 +1,55 @@
-<?php include 'header.php'; ?>
+<?php get_header(); ?>
 
-<?php include 'template-parts/ads/ads-section-1.php'; ?>
+<?php get_template_part( 'template-parts/ads/ads', 'section-1' ); ?>
 
 <main class="main" id="Main">
 	<div class="container">
 		
 		<div class="main-left">
 
+			<?php
+			if ( have_posts() ) :
+				while ( have_posts() ) : the_post();
+			?>
+
 			<div class="main-single">
 				
 				<div class="main-single-breadcrumbs">
-					<span><a href="#">Beranda</a></span>
-					<span class="breadcrumbs__separator">/</span>
-					<span><a href="#">Bisnis</a></span>
+					<?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
 				</div><!-- .main-single-breadcrumbs -->
 
 				<div class="main-single-title">
-					<h1><a href="#">Pedoman Siber</a></h1>
+					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 				</div><!-- .main-single-title -->
 
 				<div class="main-single-metadata">
 					<div class="main-single-date">
-						<span>Selasa, 12 Oktober 2021 - 14:51</span>
+						<span><?php the_date(); ?> - <?php the_time(); ?></span>
 					</div><!-- .main-single-date -->
 				</div><!-- .main-single-metadata -->
 
 				<div class="main-single-content">
-					<h1>Efficiently formulate effective synergy via fully tested core competencies.</h1>
-
-					<p>Compellingly transition visionary materials after stand-alone solutions. Phosfluorescently aggregate best-of-breed niche markets rather than empowered potentialities. Quickly actualize equity invested relationships and adaptive sources. Professionally drive B2C total linkage vis-a-vis distinctive mindshare. Appropriately harness prospective "outside.</p>
-
-					<p>Compellingly transition visionary materials after stand-alone solutions. Phosfluorescently aggregate best-of-breed niche markets rather than empowered potentialities. Quickly actualize equity invested relationships and adaptive sources. Professionally drive B2C total linkage vis-a-vis distinctive mindshare. Appropriately harness prospective "outside.</p>
-
-					<blockquote>
-						<cite><b>Baca Juga:</b> <a href="#"><b>Pedulilindungi aplikasi untuk Download Sertifikat Vaksin Covid-19 dan Cek status vaksinasi.</b></a></cite>
-					</blockquote>
-
-					<p>Compellingly transition visionary materials after stand-alone solutions. Phosfluorescently aggregate best-of-breed niche markets rather than empowered potentialities. Quickly actualize equity invested relationships and adaptive sources. Professionally drive B2C total linkage vis-a-vis distinctive mindshare. Appropriately harness prospective "outside.</p>
-
-					<figure>
-						<a href="#">
-							<img src="image/img3.jpg" alt="image">
-						</a>
-						<figcaption>Gambar suatu pelabuhan, sumber pexels.com</figcaption>
-					</figure>
-
-					<p>Compellingly transition visionary materials after stand-alone solutions. Phosfluorescently aggregate best-of-breed niche markets rather than empowered potentialities. Quickly actualize equity invested relationships and adaptive sources. Professionally drive B2C total linkage vis-a-vis distinctive mindshare. Appropriately harness prospective "outside.</p>
-
-					<ul>
-						<li>List item 1</li>
-						<li>List item 2</li>
-						<li>List item 3</li>
-						<li>List item 4</li>
-						<li>List item 5</li>
-					</ul>
-
-					<p>Compellingly transition visionary materials after stand-alone solutions. Phosfluorescently aggregate best-of-breed niche markets rather than empowered potentialities. Quickly actualize equity invested relationships and adaptive sources. Professionally drive B2C total linkage vis-a-vis distinctive mindshare. Appropriately harness prospective "outside.</p>
+					<?php the_content(); ?>
 				</div><!-- .main-single-content -->
 
 				<div class="main-single-content-pagination">
-					<span class="page-links-title">Halaman:</span>
-					<a href="#">1</a>
-					<span class="current">2</span>
-					<a href="#">3</a>
-					<a href="#">4</a>
+					<?php
+					/*
+					 * page break with number
+					 *
+					 * @link https://developer.wordpress.org/reference/functions/wp_link_pages/
+					 */
+					wp_link_pages( array(
+						'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Halaman:', 'raylight' ) . '</span>',
+						'after' => '</div>',
+						'next_or_number' => 'number',
+						'nextpagelink' => '<span class="previous-next-link">' . __( 'Selanjutnya', 'raylight' ) . '</span>',
+						'previouspagelink' => '<span class="previous-next-link">' . __( 'Sebelumnya', 'raylight' ) . '</span>',
+						'link_before' => '<span class="link-number">',
+						'link_after' => '</span>',
+						
+					) );
+					?>
 				</div><!-- .main-single-content-pagination -->
 
 				<div class="main-single-share">
@@ -77,16 +63,20 @@
 				</div><!-- .main-single-share -->
 
 			</div>
+			<?php
+				endwhile;
+			endif;
+			?>
 
 		</div><!-- .main-left -->
 
-		<?php include 'sidebar.php'; ?>
+		<?php get_sidebar(); ?>
 		
 		<div style="clear: both;"></div>
 
 	</div><!-- .container -->
 </main><!-- .main -->
 
-<?php include 'template-parts/ads/ads-section-3.php'; ?>
+<?php get_template_part( 'template-parts/ads/ads', 'section-3' ); ?>
 
-<?php include 'footer.php'; ?>
+<?php get_footer(); ?>

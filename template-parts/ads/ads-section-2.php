@@ -32,7 +32,7 @@
 				}
 			</style>		
 	
-			<div class="ads-section-2">
+			<div class="ads-section-2" <?php raylight_is_paged( 'display_none' ); ?>>
 				<div class="ads-section-2-content">
 					
 					<?php raylight_ads_code( 'ads_section_2' ); ?>

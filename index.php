@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="posts-bottom-menu">
+<section class="posts-bottom-menu" <?php raylight_is_paged( 'display_none' ); ?>>
 	<div class="container">		
 		<div class="posts-bottom-menu-flex">
 			
@@ -16,7 +16,7 @@
 	<div class="container">
 		
 		<div class="main-left">
-			<div class="swiper posts-swiper">
+			<div class="swiper posts-swiper" <?php raylight_is_paged( 'display_none' ); ?>>
 				<div class="swiper-wrapper">
 					
 					<?php get_template_part( 'template-parts/post/post', 'swiper' ); ?>
@@ -26,7 +26,9 @@
 
 			<?php get_template_part( 'template-parts/ads/ads', 'section-2' ); ?>
 
-			<div class="posts-main">
+			<div class="posts-main <?php raylight_is_paged( 'class_paged' ); ?>">
+
+				<?php get_template_part( 'template-parts/page-title' ); ?>
 				
 				<?php get_template_part( 'template-parts/post/post', 'main' ); ?>
 
@@ -46,7 +48,7 @@
 
 <?php get_template_part( 'template-parts/ads/ads', 'section-3' ); ?>
 
-<section class="posts-bottom-main">
+<section class="posts-bottom-main" <?php raylight_is_paged( 'display_none' ); ?>>
 	<div class="container">
 		<div class="posts-bottom-main-flex">
 			

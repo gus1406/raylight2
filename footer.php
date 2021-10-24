@@ -1,3 +1,5 @@
+<?php if ( ! is_404() ) : ?>
+
 <footer class="footer" id="footer">
 	<div class="container">
 		
@@ -29,26 +31,13 @@
 	</div><!-- .container -->
 </footer><!-- .footer -->
 
-
-
 <section class="go-top" id="go_top">
 	<span><?php echo file_get_contents(get_template_directory() . "/image/arrow-up-icon.svg"); ?></span>
 </section><!-- .go-top -->
 
-<?php wp_footer(); ?>
+<?php endif; ?>
 
-<script>
-	var swiper = new Swiper('.swiper',{
-   	speed:1200,
-   	slidesPerView:'auto',
-   	grabCursor:true,
-   	spaceBetween:0,
-   	loop:true,
-   	parallax:true,
-  	centeredSlides:true,
-  	autoplay:{delay:3500,disableOnInteraction:false,},
-});
-</script>
+<?php wp_footer(); ?>
 
 </body>
 </html>
