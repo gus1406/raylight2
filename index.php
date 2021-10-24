@@ -24,36 +24,36 @@
 				</div><!-- .swiper-wrapper -->
 			</div><!-- .swiper -->
 
-			<?php include 'template-parts/ads/ads-section-2.php'; ?>
+			<?php get_template_part( 'template-parts/ads/ads', 'section-2' ); ?>
 
 			<div class="posts-main">
 				
-				<?php include 'template-parts/post/post-main.php'; ?>
+				<?php get_template_part( 'template-parts/post/post', 'main' ); ?>
 
 				<div class="posts-main-pagination">
-					<a href="#">Selanjutnya</a>
+					<?php posts_nav_link( ' ', 'Sebelumnya', 'Selanjutnya' ); ?>
 				</div><!-- .posts-main-pagination -->
 
 			</div><!-- .posts-main -->
 		</div><!-- .main-left -->
 		
-		<?php include 'sidebar.php'; ?>
+		<?php get_sidebar(); ?>
 		
 		<div style="clear: both;"></div>
 
 	</div><!-- .container -->
 </main><!-- .main -->
 
-<?php include 'template-parts/ads/ads-section-3.php'; ?>
+<?php get_template_part( 'template-parts/ads/ads', 'section-3' ); ?>
 
 <section class="posts-bottom-main">
 	<div class="container">
 		<div class="posts-bottom-main-flex">
 			
-			<?php include 'template-parts/post/post-bottom-main.php'; ?>
+			<?php get_template_part( 'template-parts/post/post', 'bottom-main' ); ?>
 
 		</div><!-- posts-bottom-main-flex -->
 	</div><!-- .container -->
 </section><!-- .posts-bottom-main -->
 
-<?php include 'footer.php'; ?>
+<?php get_footer(); ?>

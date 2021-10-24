@@ -1,13 +1,14 @@
 					<?php
-					query_posts( 
-						array( 
-							'post__in' => get_option( 'sticky_posts' ),
-							'posts_per_page' => 5,
-						) 
+					$args_post_swiper = array(
+						'post_type' => 'post',
+						'posts_per_page' => 3,
+						'post__in' => get_option( 'sticky_posts' ),
 					);
 
-					if ( have_posts() ) :
-						while ( have_posts() ) : the_post();
+					$post_swiper = new WP_Query( $args_post_swiper );
+
+					if ( $post_swiper->have_posts() ) :
+						while ( $post_swiper->have_posts() ) : $post_swiper->the_post();
 					?>
 					<div class="swiper-slide">
 						
@@ -33,6 +34,6 @@
 					</div>
 					<?php
 						endwhile;
-						wp_reset_query();
+						$post_swiper->reset_postdata();
 					endif;
 					?>

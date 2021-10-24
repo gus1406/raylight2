@@ -136,6 +136,17 @@ function raylight_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar Footer', 'raylight' ),
+			'id'            => 'sidebar-footer',
+			'description'   => esc_html__( 'Tambahkan widget disini.', 'raylight' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'raylight_widgets_init' );
 
@@ -208,11 +219,17 @@ function social_media_url( $social_media ) {
 function raylight_ads_code( $ads ) {
 	$ads_header = get_theme_mod( 'setting_ads_header' );
 	$ads_section_1 = get_theme_mod( 'setting_ads_section_1' );
+	$ads_section_2 = get_theme_mod( 'setting_ads_section_2' );
+	$ads_section_3 = get_theme_mod( 'setting_ads_section_3' );
 
 	if ( $ads == "ads_header" ) {
 		echo $ads_header;
 	} else if ( $ads == "ads_section_1" ) {
 		echo $ads_section_1;
+	} else if ( $ads == "ads_section_2" ) {
+		echo $ads_section_2;
+	} else if ( $ads == "ads_section_3" ) {
+		echo $ads_section_3;
 	}
 }
 

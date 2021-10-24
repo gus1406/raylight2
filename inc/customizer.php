@@ -83,11 +83,29 @@ function raylight_customizer_register( $wpc ) {
 		'panel' => 'panel_ads',
 	) );
 
+	$wpc->add_section( 'section_ads_section_2', array(
+		'title' => __( 'Iklan Bagian 2', 'raylight' ),
+		'panel' => 'panel_ads',
+	) );
+
+	$wpc->add_section( 'section_ads_section_3', array(
+		'title' => __( 'Iklan Bagian 3', 'raylight' ),
+		'panel' => 'panel_ads',
+	) );
+
 	$wpc->add_setting( 'setting_ads_header', array(
 		'sanitize_callback' => false,
 	) );
 
 	$wpc->add_setting( 'setting_ads_section_1', array(
+		'sanitize_callback' => false,
+	) );
+
+	$wpc->add_setting( 'setting_ads_section_2', array(
+		'sanitize_callback' => false,
+	) );
+
+	$wpc->add_setting( 'setting_ads_section_3', array(
 		'sanitize_callback' => false,
 	) );
 
@@ -102,6 +120,20 @@ function raylight_customizer_register( $wpc ) {
 		'label' => __( 'Kode Iklan', 'raylight' ),
 		'section' => 'section_ads_section_1',
 		'settings' => 'setting_ads_section_1',
+		'type' => 'textarea',
+	) );
+
+	$wpc->add_control( 'control_ads_section_2', array(
+		'label' => __( 'Kode Iklan', 'raylight' ),
+		'section' => 'section_ads_section_2',
+		'settings' => 'setting_ads_section_2',
+		'type' => 'textarea',
+	) );
+
+	$wpc->add_control( 'control_ads_section_3', array(
+		'label' => __( 'Kode Iklan', 'raylight' ),
+		'section' => 'section_ads_section_3',
+		'settings' => 'setting_ads_section_3',
 		'type' => 'textarea',
 	) );
 }
