@@ -1,8 +1,10 @@
 			<?php
+			$post_bottom_menu_cat = get_theme_mod( 'setting_home_post_top' );
+
 			$args_post_bottom_menu = array(
 				'post_type' => 'post',
 				'posts_per_page' => 3,
-				'category_name' => '',
+				'category_name' => $post_bottom_menu_cat,
 				'ignore_sticky_posts' => true,
 			);
 

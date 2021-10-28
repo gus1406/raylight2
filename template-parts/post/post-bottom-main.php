@@ -1,9 +1,11 @@
 			<ul>
 				<?php
+				$post_bottom_main_cat = get_theme_mod( 'setting_home_post_bottom' );
+
 				$args_post_bottom_main = array(
 					'post_type' => 'post',
 					'posts_per_page' => 5,
-					'category_name' => '',
+					'category_name' => $post_bottom_main_cat,
 					'ignore_sticky_posts' => true,
 				);
 

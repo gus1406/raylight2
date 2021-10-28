@@ -136,6 +136,46 @@ function raylight_customizer_register( $wpc ) {
 		'settings' => 'setting_ads_section_3',
 		'type' => 'textarea',
 	) );
+
+	// Create panel for post settings
+	$wpc->add_panel( 'panel_post', array(
+		'title' 	=> __( 'Pengaturan Postingan', 'raylight' ),
+		'priority' 	=> 700,
+	) );
+
+	$wpc->add_section( 'section_home_post_top', array(
+		'title' => __( 'Postingan Paling Atas', 'raylight' ),
+		'panel' => 'panel_post',
+	) );
+
+	$wpc->add_section( 'section_home_post_bottom', array(
+		'title' => __( 'Postingan Paling Bawah', 'raylight' ),
+		'panel' => 'panel_post',
+	) );
+
+	$wpc->add_setting( 'setting_home_post_top', array(
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wpc->add_setting( 'setting_home_post_bottom', array(
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wpc->add_control( 'control_home_post_top', array(
+		'label' => __( 'Kategori Postingan', 'raylight' ),
+		'description' => __( 'Kategori postingan yang akan muncul pada postingan paling atas (Beranda), contoh: berita atau berita-terbaru', 'raylight' ),
+		'section' => 'section_home_post_top',
+		'settings' => 'setting_home_post_top',
+		'type' => 'text',
+	) );
+
+	$wpc->add_control( 'control_home_post_bottom', array(
+		'label' => __( 'Kategori Postingan', 'raylight' ),
+		'description' => __( 'Kategori postingan yang akan muncul pada postingan paling bawah (Beranda), contoh: berita atau berita-terbaru', 'raylight' ),
+		'section' => 'section_home_post_bottom',
+		'settings' => 'setting_home_post_bottom',
+		'type' => 'text',
+	) );
 }
 add_action( 'customize_register', 'raylight_customizer_register' );
 ?>

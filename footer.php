@@ -1,4 +1,14 @@
-<?php if ( ! is_404() ) : ?>
+<?php
+/**
+ * The template for displaying the footer
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package raylight
+ */
+
+if ( ! is_404() ) : 
+?>
 
 <footer class="footer" id="footer">
 	<div class="container">

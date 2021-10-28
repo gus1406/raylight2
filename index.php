@@ -1,4 +1,19 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package raylight
+ */
+
+get_header();
+?>
 
 <section class="posts-bottom-menu" <?php raylight_is_paged( 'display_none' ); ?>>
 	<div class="container">		

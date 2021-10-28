@@ -176,6 +176,13 @@ function raylight_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'raylight_scripts' );
 
+/** 
+ * Disable WordPress Admin Bar for all users.
+ *
+ * @link https://www.wpbeginner.com/wp-tutorials/how-to-disable-wordpress-admin-bar-for-all-users-except-administrators/
+ */
+show_admin_bar(false);
+
 /**
  * Raylight custom logo
  * 
@@ -189,7 +196,7 @@ function raylight_custom_logo() {
 	if ( has_custom_logo() ) {
 		echo '<a href="' . esc_url( home_url( '/' ) ) . '"><img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '"></a>';
 	} else {
-		echo '<h1><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . bloginfo( 'name' ) . '</a></h1>';
+		echo '<h1><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></h1>';
 	}
 }
 
@@ -257,6 +264,36 @@ function raylight_post_class() {
 }
 
 /**
+ * Raylight post tags
+ */
+function raylight_post_tags() {
+	$post_tags = get_the_tags();
+	if ( !empty( $post_tags ) ) {
+		foreach ( $post_tags as $tags ) {
+			echo '<a href="' . get_tag_link( $tags ) . '">' . $tags->name . '</a>';
+		}
+	}
+}
+
+/**
+ * Raylight post pagination
+ * 
+ * @link https://developer.wordpress.org/reference/functions/wp_link_pages/
+ */
+function raylight_post_pagination() {
+	wp_link_pages( array(
+		'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Halaman:', 'raylight' ) . '</span>',
+		'after' => '</div>',
+		'next_or_number' => 'number',
+		'nextpagelink' => '<span class="previous-next-link">' . __( 'Selanjutnya', 'raylight' ) . '</span>',
+		'previouspagelink' => '<span class="previous-next-link">' . __( 'Sebelumnya', 'raylight' ) . '</span>',
+		'link_before' => '<span class="link-number">',
+		'link_after' => '</span>',
+		
+	) );
+}
+
+/**
  * If is paged
  */
 function raylight_is_paged( $condition ) {
@@ -272,6 +309,19 @@ function raylight_is_paged( $condition ) {
 		}
 	}
 }
+
+/**
+ * Remove sticky post from main query
+ * 
+ * @link https://wordpress.org/support/topic/excluding-sticky-posts-from-main-query-on-index-php/#post-13994121
+ */
+function remove_sticky_from_main_loop( $query ) {
+	if ( is_home() && $query->is_main_query() && ! is_admin() ) {
+		$query->set( 'ignore_sticky_posts', true );
+		$query->set( 'post__not_in', get_option( 'sticky_posts' ) );
+	}
+}
+add_action( 'pre_get_posts', 'remove_sticky_from_main_loop' );
 
 /**
  * WordPress Breadcrumbs
