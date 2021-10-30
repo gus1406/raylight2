@@ -185,3 +185,5 @@
 
 	</div><!-- .container -->
 </section><!-- .search-form-mobile -->
+
+<?php endif; ?>
