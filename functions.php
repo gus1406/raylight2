@@ -9,16 +9,13 @@
 
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/gus1406/raylight/',
+	'https://github.com/gus1406/raylight2',
 	__FILE__,
 	'raylight'
 );
 
 //Set the branch that contains the stable release.
 $myUpdateChecker->setBranch('master');
-
-//Optional: If you're using a private repository, specify the access token like this:
-$myUpdateChecker->setAuthentication('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');
 
 $myUpdateChecker->getVcsApi()->enableReleaseAssets();
 
