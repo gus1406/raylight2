@@ -22,6 +22,8 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<?php if ( ! is_404() ) : ?>
+
 <nav class="navbar-top" id="navbar_top">
 	<div class="container">
 		

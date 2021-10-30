@@ -1,13 +1,23 @@
-<?php include 'header.php'; ?>
+<?php
+/**
+ * The template for displaying 404 pages (not found)
+ *
+ * @link https://codex.wordpress.org/Creating_an_Error_404_Page
+ *
+ * @package raylight
+ */
+
+get_header();
+?>
 
 <main class="main-404" id="Main_404">
 	
 	<div class="main-404-container">
 		<h1 class="main-404-title">404</h1>
-		<p class="main-404-desc">Maaf, halaman yang anda cari tidak ditemukan</p>
-		<p class="main-404-home-link">Kembali ke <a href="#">Beranda</a></p>
+		<p class="main-404-desc"><?php _e( 'Maaf, halaman yang anda cari tidak ditemukan', 'raylight' ); ?></p>
+		<p class="main-404-home-link"><?php _e( 'Kembali ke', 'raylight' ); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'Beranda', 'raylight' ); ?></a></p>
 	</div><!-- .main-404-container -->
 
 </main><!-- .main-404 -->
 
-<?php include 'footer.php'; ?>
+<?php get_footer(); ?>

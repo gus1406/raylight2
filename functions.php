@@ -7,6 +7,19 @@
  * @package raylight
  */
 
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/gus1406/raylight',
+	__FILE__,
+	'raylight'
+);
+
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('master');
+
+//Optional: If you're using a private repository, specify the access token like this:
+$myUpdateChecker->setAuthentication('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');
+
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
@@ -178,6 +191,26 @@ function raylight_scripts() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'raylight_scripts' );
+
+/** 
+ * Disable WordPress Admin Bar for all users.
+ *
+ * @link https://www.wpbeginner.com/wp-tutorials/how-to-disable-wordpress-admin-bar-for-all-users-except-administrators/
+ */
+show_admin_bar(false);
+
+/**
+ * Remove sticky post from main query
+ * 
+ * @link https://wordpress.org/support/topic/excluding-sticky-posts-from-main-query-on-index-php/#post-13994121
+ */
+function remove_sticky_from_main_loop( $query ) {
+	if ( is_home() && $query->is_main_query() && ! is_admin() ) {
+		$query->set( 'ignore_sticky_posts', true );
+		$query->set( 'post__not_in', get_option( 'sticky_posts' ) );
+	}
+}
+add_action( 'pre_get_posts', 'remove_sticky_from_main_loop' );
 
 /**
  * Require breadcrumbs

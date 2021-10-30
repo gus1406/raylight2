@@ -12,10 +12,12 @@
  * @package raylight
  */
 
-get_header(); 
+get_header();
+
+$is_not_home = is_paged() || is_category() || is_tag() || is_search() || is_archive();
 ?>
 
-<section class="posts-bottom-menu">
+<section class="posts-bottom-menu" <?php if ( $is_not_home ) { echo 'style="display: none;"'; } ?>>
 	<div class="container">		
 		<div class="posts-bottom-menu-flex">
 			
@@ -31,7 +33,7 @@ get_header();
 	<div class="container">
 		
 		<div class="main-left">
-			<div class="swiper posts-swiper">
+			<div class="swiper posts-swiper" <?php if ( $is_not_home ) { echo 'style="display: none;"'; } ?>>
 				<div class="swiper-wrapper">
 					
 					<?php get_template_part( 'template-parts/post/post-swiper' ); ?>
@@ -39,9 +41,13 @@ get_header();
 				</div><!-- .swiper-wrapper -->
 			</div><!-- .swiper -->
 
-			<?php get_template_part( 'template-parts/ads/ads-section-2' ); ?>
+			<?php
+			if ( ! $is_not_home ) {
+				get_template_part( 'template-parts/ads/ads-section-2' );	
+			}	
+			?>
 
-			<div class="posts-main">
+			<div class="posts-main <?php if ( $is_not_home ) { echo 'paged'; } ?>">
 				
 				<?php get_template_part( 'template-parts/post/post-main' ); ?>
 
@@ -63,7 +69,7 @@ get_header();
 
 <?php get_template_part( 'template-parts/ads/ads-section-3' ); ?>
 
-<section class="posts-bottom-main">
+<section class="posts-bottom-main" <?php if ( $is_not_home ) { echo 'style="display: none;"'; } ?>>
 	<div class="container">
 		<div class="posts-bottom-main-flex">
 			
