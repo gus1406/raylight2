@@ -34,10 +34,15 @@
 
 <section class="ads-section-3">
 	<div class="container">
+		
 		<div class="ads-section-3-content">
-
-			<?php raylight_ads_code( 'ads_section_3' ); ?>
 			
+			<?php
+			$ads_section_3 = get_theme_mod( 'setting_ads_section_3' );
+			echo $ads_section_3;
+			?>
+
 		</div><!-- .ads-section-3-content -->
+
 	</div><!-- .container -->
 </section><!-- .ads-section-3 -->

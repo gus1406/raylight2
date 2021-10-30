@@ -12,9 +12,15 @@
 					?>
 					<div class="swiper-slide">
 						
-						<article id="post-<?php the_ID(); ?>" class="post-swiper <?php raylight_post_class(); ?>">
+						<article id="post-<?php the_ID(); ?>" class="post-swiper">
 							<figure class="post-swiper-image">
-								<?php raylight_post_thumbnail(); ?>
+								<?php
+								$post_thumbnail = get_the_post_thumbnail_url( get_the_ID() );
+
+								if ( has_post_thumbnail() ) {
+									echo '<a href="' . get_permalink() . '"><img src="' . esc_url( $post_thumbnail ) . '" ></a>';
+								}
+								?>
 							</figure>
 							<section class="post-swiper-entry">
 								<div class="post-swiper-category">
@@ -26,7 +32,7 @@
 								<div class="post-swiper-datapost">
 									<span><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php the_author(); ?></a></span>
 									<span class="separator">/</span>
-									<span><?php the_date(); ?></span>
+									<span><?php echo get_the_date(); ?></span>
 								</div>
 							</section>
 						</article>

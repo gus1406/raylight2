@@ -7,6 +7,7 @@
  * @package raylight
  */
 ?>
+
 <div class="main-right main-right-sticky">
 	<aside class="sidebar">
 

@@ -32,10 +32,13 @@
 				}
 			</style>		
 	
-			<div class="ads-section-2" <?php raylight_is_paged( 'display_none' ); ?>>
+			<div class="ads-section-2">
 				<div class="ads-section-2-content">
 					
-					<?php raylight_ads_code( 'ads_section_2' ); ?>
+					<?php
+					$ads_section_2 = get_theme_mod( 'setting_ads_section_2' );
+					echo $ads_section_2;
+					?>
 
 				</div><!-- .ads-section-2-content -->
 			</div><!-- .ads-section-2 -->

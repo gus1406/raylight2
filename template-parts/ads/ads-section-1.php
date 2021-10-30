@@ -37,7 +37,10 @@
 		
 		<div class="ads-section-1-content">
 			
-			<?php raylight_ads_code( 'ads_section_1' ); ?>
+			<?php
+			$ads_section_1 = get_theme_mod( 'setting_ads_section_1' );
+			echo $ads_section_1;
+			?>
 
 		</div><!-- .ads-section-1-content -->
 

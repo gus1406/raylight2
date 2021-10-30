@@ -322,12 +322,19 @@ a {
 	color: var(--black);
 }
 
-.navbar-menu-slide-footer p:first-child {
+.navbar-menu-slide-footer ul {
 	margin-bottom: 5px;
 }
 
-.navbar-menu-slide-footer p:first-child a {
+.navbar-menu-slide-footer ul li {
+	display: inline-block;
 	margin-right: 10px;
+}
+
+.navbar-menu-slide-footer ul li a {
+	color: inherit;
+	font-size: 13px;
+	color: var(--tint7);
 }
 
 .navbar-menu-slide-footer p {

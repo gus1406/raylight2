@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * The header for our theme
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
@@ -22,8 +22,6 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<?php if ( ! is_404() ) : ?>
-
 <nav class="navbar-top" id="navbar_top">
 	<div class="container">
 		
@@ -32,22 +30,26 @@
 				<ul class="remove-list">
 					<li>
 						<span id="open_nav_menu_slide">
+
 							<?php echo file_get_contents(get_template_directory() . "/image/menu-icon-1.svg"); ?>
+
 						</span> 
 						<b><?php _e( 'Menu', 'raylight' ); ?></b>
 					</li>
 					<li>
-						<?php get_search_form(); ?>
+
+						<?php get_template_part( 'template-parts/search-form' ); ?>
+
 					</li>
 				</ul>
 			</div><!-- .navbar-top-left -->
 			<div class="navbar-top-right">
 				<ul class="remove-list">
-					<li><span><?php get_template_part( 'template-parts/date' ); ?></span></li>
-					<li><a href="<?php social_media_url( 'facebook_url' ); ?>"><i class="fab fa-facebook-f"></i></a></li>
-					<li><a href="<?php social_media_url( 'twitter_url' ); ?>"><i class="fab fa-twitter"></i></a></li>
-					<li><a href="<?php social_media_url( 'instagram_url' ); ?>"><i class="fab fa-instagram"></i></a></li>
-					<li><a href="<?php social_media_url( 'youtube_url' ); ?>"><i class="fab fa-youtube"></i></a></li>
+
+					<li><span><?php get_template_part( 'template-parts/site-date' ); ?></span></li>
+					
+					<?php get_template_part( 'template-parts/site-social-media' ); ?>
+
 				</ul>
 			</div><!-- .navbar-top-right -->
 		</div><!-- .navbar-top-flex -->
@@ -60,22 +62,29 @@
 		
 		<div class="navbar-menu-slide-header">
 			<div class="close-navbar-menu-slide">
+
 				<?php echo file_get_contents(get_template_directory() . "/image/close-icon.svg"); ?>
+
 			</div><!-- .close-navbar-menu-slide -->
 		</div><!-- .navbar-menu-slide-header -->
 
 		<div class="navbar-menu-slide-content">
+
 			<?php wp_nav_menu( array( 'theme_location' => 'menu-slide' ) ); ?>
+
 		</div><!-- .navbar-menu-slide-content -->
 
 		<div class="navbar-menu-slide-footer">
+			<ul class="remove-list">
+
+				<?php get_template_part( 'template-parts/site-social-media' ); ?>
+
+			</ul>
 			<p>
-				<a href="<?php social_media_url( 'facebook_url' ); ?>"><i class="fab fa-facebook-f"></i></a>
-				<a href="<?php social_media_url( 'twitter_url' ); ?>"><i class="fab fa-twitter"></i></a>
-				<a href="<?php social_media_url( 'instagram_url' ); ?>"><i class="fab fa-instagram"></i></a>
-				<a href="<?php social_media_url( 'youtube_url' ); ?>"><i class="fab fa-youtube"></i></a>
+
+				<?php get_template_part( 'template-parts/site-copyright' ); ?>
+
 			</p>
-			<p><?php _e( 'Copyright © 2021', 'raylight' ); ?> - <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo bloginfo( 'name' ); ?></a> - <?php _e( 'All Right Reserved', 'raylight' ); ?></p>
 		</div><!-- .navbar-menu-slide-footer -->
 
 	</div><!-- .navbar-menu-slide-container -->
@@ -87,12 +96,15 @@
 		<div class="navbar-main-flex">
 			<div class="navbar-main-site-branding">
 
-				<?php raylight_custom_logo(); ?>
+				<?php get_template_part( 'template-parts/site-branding' ); ?>
 
 			</div><!-- .navbar-main-site-branding -->
 			<div class="navbar-main-ads">
 
-				<?php raylight_ads_code( 'ads_header' ); ?>
+				<?php
+				$ads_header = get_theme_mod( 'setting_ads_header' );
+				echo $ads_header;
+				?>
 				
 			</div><!-- .navbar-main-ads -->
 		</div><!-- .navbar-main-flex -->
@@ -123,19 +135,23 @@
 
 			<div class="navbar-mobile-menu-button">
 				<span id="navbar_mobile_open_menu_slide">
+
 					<?php echo file_get_contents(get_template_directory() . "/image/menu-icon.svg"); ?>
+
 				</span>
 			</div><!-- .navbar-mobile-menu-button -->
 
 			<div class="navbar-mobile-site-branding">
 
-				<?php raylight_custom_logo(); ?>
+				<?php get_template_part( 'template-parts/site-branding' ); ?>
 
 			</div><!-- .navbar-mobile-site-branding -->
 
 			<div class="navbar-mobile-search-button">
 				<span class="toggle-search-form-mobile">
+
 					<?php echo file_get_contents(get_template_directory() . "/image/search-icon.svg"); ?>
+
 				</span>
 			</div><!-- .navbar-mobile-search-button -->
 
@@ -148,7 +164,7 @@
 	<div class="container">
 		
 		<div class="navbar-mobile-menu-flex">
-			
+
 			<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
 
 		</div><!-- .navbar-mobile-menu-flex -->
@@ -161,11 +177,9 @@
 		
 		<div class="search-form-mobile-flex">
 			
-			<?php get_template_part( 'template-parts/searchformmobile' ); ?>
+			<?php get_template_part( 'template-parts/search-form-mobile' ); ?>
 
 		</div><!-- .search-form-mobile-flex -->
 
 	</div><!-- .container -->
 </section><!-- .search-form-mobile -->
-
-<?php endif; ?>

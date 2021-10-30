@@ -1,0 +1,1 @@
+<?php _e( 'Copyright © 2021', 'raylight' ); ?> - <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo bloginfo( 'name' ); ?></a> - <?php _e( 'All Right Reserved', 'raylight' ); ?>
