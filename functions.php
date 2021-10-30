@@ -9,7 +9,7 @@
 
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/gus1406/raylight2',
+	'https://github.com/gus1406/raylight2/',
 	__FILE__,
 	'raylight'
 );
